@@ -1,0 +1,19 @@
+<div *ngIf = user>
+  <div id="container">
+    <div id="block">
+      <h2 class="page-header"> 사업자 QR</h2>
+      <ul class="list-group">
+        <h4>{{user.name}}님의 QR코드</h4>
+        <li class="list-group-item">이름:{{user.name}}</li>
+        <li class="list-group-item">ID:{{user.username}}</li>
+        <li class="list-group-item">이메일:{{user.email}}</li>
+      </ul>
+      <br>
+      <button (click) = "createCode()" class="btn btn-success"> QR코드 생성하기</button><br>
+      <div *ngIf="createdCode">
+        <ngx-qrcode [element-type]="img" [value] = "createdCode"></ngx-qrcode> <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
